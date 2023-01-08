@@ -10,7 +10,6 @@ class FarmaController extends Controller
     public function index()
     {
         $farmacos = Farmaco::all();
-        // dd($farmacos);
         return view('indexfarma.index', ['farmacos'=>$farmacos]);
     }
     public function create(){
@@ -18,6 +17,7 @@ class FarmaController extends Controller
     }
     public function store(Request $request)
     {
-    dd($request);
+        Farmaco::create($request->all());
+        return redirect()->route('farmacos-index');
     }
 }

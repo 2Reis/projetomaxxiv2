@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title','Listagem')
+@section('title','Cadastrar')
 
 @section('content')
    <div class="container">
       <h1>Cadastrar farmaco</h1>
       <hr>
-      <form action="{{route('farmacos-store')}}"method="POST"()>
+      <form action="{{route('farmacos-store')}}"method="POST">
          @csrf
             <div class="form-group">
                <div class="group">
