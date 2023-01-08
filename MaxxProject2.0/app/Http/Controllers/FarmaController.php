@@ -20,4 +20,27 @@ class FarmaController extends Controller
         Farmaco::create($request->all());
         return redirect()->route('farmacos-index');
     }
+    public function edit($id)
+    {
+        $farmacos = Farmaco::where('id',$id)->first();
+        if(!empty($farmacos))
+        {
+            return view('indexfarma.edit', ['farmacos'=>$farmacos]);
+        }
+        else
+        {
+            return redirect()->route('farmacos-index');
+        }
+    }
+     public function update(Request $request, $id)
+    {
+        $data = [
+            'nome' => $request->nome,
+            'categoria' => $request->categoria,
+            'fabricacao' => $request->fabricacao,
+            'valor' => $request->valor,
+        ];
+        Farmaco::where('id',$id)->update($data);
+        return redirect()->route('farmacos-index');
+    }   
 }

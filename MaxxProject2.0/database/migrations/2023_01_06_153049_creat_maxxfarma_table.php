@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('maxxfarma', function(Blueprint $table){
             $table->id();
-            $table->string('nome',55);
-            $table->string('categoria',55);
-            $table->year('fabricacao',55);
+            $table->string('nome',100);
+            $table->string('categoria',100);
+            $table->year('fabricacao',100);
             $table->double('valor',8.2);
             $table->timestamps();
         });
