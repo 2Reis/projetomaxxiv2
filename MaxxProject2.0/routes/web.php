@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
     Route::post('/',[FarmaController::class,'store'])->name('farmacos-store');
     Route::get('/{id}/edit',[FarmaController::class,'edit'])->where('id','[0-9]+')->name('farmacos-edit');
     Route::put('/{id}',[FarmaController::class,'update'])->where('id','[0-9]+')->name('farmacos-update');
- // Route::destroy('/{id}',[FarmaController::class,'destroy'])->name('farmacos-destroy');
+    Route::delete('/{id}',[FarmaController::class,'destroy'])->where('id','[0-9]+')->name('farmacos-destroy');
 });
 
 Route::get('/home', [FarmaController::class, 'index']);

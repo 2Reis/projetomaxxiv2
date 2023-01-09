@@ -42,5 +42,10 @@ class FarmaController extends Controller
         ];
         Farmaco::where('id',$id)->update($data);
         return redirect()->route('farmacos-index');
-    }   
+    }
+    public function destroy($id)
+    {
+        Farmaco::where('id',$id)->delete();
+        return redirect()->route('farmacos-index');
+    }
 }
